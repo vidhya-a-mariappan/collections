@@ -1,0 +1,32 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class fizzBuzzGame {
+        public List<String> fizzBuzz(int l) {
+        List<String> answer = new ArrayList<String>(l);
+        for (int i = 1; i <= l; i++) {
+            boolean divisibleBy3 = i % 3 == 0;
+            boolean divisibleBy5 = i % 5 == 0;
+            if (divisibleBy3 && divisibleBy5)
+                answer.add("Fizz");
+            else if (divisibleBy3)
+                answer.add("Fizz");
+            else if (divisibleBy5)
+                answer.add("Buzz");
+            else
+                answer.add(String.valueOf(i));
+        }
+        return answer;
+    }
+
+    public static void main(String[] args) {
+        fizzBuzzGame fb = new fizzBuzzGame();
+        System.out.println("Enter the number to start playing fizzbuzz game");
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        List<String> res=fb.fizzBuzz(n);
+        for (String result :res)
+                System.out.print(result+ " ");
+    }
+}
